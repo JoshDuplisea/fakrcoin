@@ -2,12 +2,12 @@
 Copyright 2018 Joshua Duplisea
 */
 
-var logResults = (response) => {
+let logResults = (response) => {
 	let data = JSON.stringify(response);
 	console.log(data);		
 	document.getElementById("main").innerHTML = data.toString();
 }
-var blockExplorer = () => {
+let blockExplorer = () => {
 	fetch('http://localhost:3001/blocks', {
 		method: 'get'
 	})
@@ -19,7 +19,7 @@ var blockExplorer = () => {
 		console.log(`Error: ${err}`);
 	});
 }
-var addPeer = () => {
+let addPeer = () => {
 	fetch("http://localhost:3001/addPeer",
 	{
 		headers: {
@@ -36,7 +36,7 @@ var addPeer = () => {
 		console.log(`Error: ${err}`);
 	});
 }
-var activePeers = () => {
+let activePeers = () => {
 	fetch('http://localhost:3001/peers', {
 		method: 'get'
 	})
@@ -48,7 +48,7 @@ var activePeers = () => {
 		console.log(`Error: ${err}`);
 	});
 }
-var mineBlocks = () => {
+let mineBlocks = () => {
 	fetch("http://localhost:3001/mineBlock",
 	{
 		headers: {
